@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    @message = Message.new
-    @messages = Message.all
+    @message = Message.new #メッセージモデルの新規インスタンスを作成
+    @messages = Message.all #メッセージモデルの全てのインスタンスを取得
+    #index.html.erbを表示
   end
   
   def create
@@ -9,7 +10,7 @@ class MessagesController < ApplicationController
     @message.save
     redirect_to root_path , notice: 'メッセージを保存しました'
   end
-  
+
   private
   def message_params
     params.require(:message).permit(:name, :body)

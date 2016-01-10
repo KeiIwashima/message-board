@@ -11,12 +11,13 @@
     <% end %>
   </div>
 </div>
-
+<%= @message.inspect %>
 <%= form_for(@message) do |f| %>
 　Name:
   <%= f.text_field :name %>
 　
 　Description：
 　<%= f.text_area :body %>
+　
 　<%= f.submit %>
 <% end %>
